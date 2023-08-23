@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
       { id: 5, nombre: 'Camiseta Sao Paulo', precio: 16500 },
     ];
   
-    // Mostrar productos en la tienda
     productos.forEach(producto => {
       const productoHTML = `
         <div class="producto">
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
       productosContainer.innerHTML += productoHTML;
     });
   
-    // Agregar productos al carrito
     productosContainer.addEventListener('click', event => {
       if (event.target.classList.contains('agregar')) {
         const productId = parseInt(event.target.getAttribute('data-id'));
@@ -37,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   
-    // Funciones del carrito
     function agregarAlCarrito(producto) {
       const itemHTML = `<li>${producto.nombre} - $${producto.precio.toFixed(2)}</li>`;
       itemsList.innerHTML += itemHTML;
@@ -80,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
     vaciarBoton.addEventListener('click', vaciarCarrito);
     
-    // Mostrar/ocultar el carrito
     carritoIcon.addEventListener('click', () => {
       document.getElementById('carrito').classList.toggle('visible');
     });
